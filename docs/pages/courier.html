@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="only light">
+  <title>Кабинет курьера — Сдобс Фудс</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/main.js" defer type="module"></script>
+</head>
+
+<body class="cr-page">
+
+  <!-- Шапка кабинета курьера -->
+  <header class="cr-header">
+    <div class="cr-header__inner">
+      <a class="logo" href="../index.html">
+        <img src="../img/logo.svg" alt="Сдобс Фудс">
+      </a>
+
+      <nav class="cr-nav">
+        <p class="cr-nav__title">Кабинет курьера</p>
+        <a class="cr-nav__link" href="tel:+79005555555">Связаться с диспетчером</a>
+      </nav>
+
+      <a class="cr-header__profile" href="./profile.html" aria-label="Профиль курьера">
+        <img src="../img/user.svg" width="56" height="56" alt="">
+      </a>
+    </div>
+  </header>
+
+  <main class="cr-main" data-courier>
+
+    <!-- Обзор смены -->
+    <section class="cr-overview">
+      <div class="cr-heading">
+        <div class="cr-heading__text">
+          <h1>Мои доставки</h1>
+          <p>Все заказы произведены и готовы к выдаче. Отмечайте доставку после вручения.</p>
+        </div>
+
+        <div class="cr-courier">
+          <span class="cr-courier__avatar">АК</span>
+          <div>
+            <p class="cr-courier__name">Алексей Козлов</p>
+            <p class="cr-courier__shift">
+              <span class="cr-courier__dot"></span>
+              На смене · 09:00–18:00
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cr-stats">
+        <div class="cr-stat">
+          <span class="cr-stat__icon cr-stat__icon--mint"><img src="../img/package.svg" width="22" height="22" alt=""></span>
+          <div>
+            <p class="cr-stat__value"><b data-cr-stat="total">4</b> <span data-cr-caption="total">заказа на сегодня</span></p>
+            <p class="cr-stat__hint">24 октября, суббота</p>
+          </div>
+        </div>
+        <div class="cr-stat">
+          <span class="cr-stat__icon cr-stat__icon--amber"><img src="../img/truck.svg" width="22" height="22" alt=""></span>
+          <div>
+            <p class="cr-stat__value"><b data-cr-stat="transit">3</b> <span>в пути</span></p>
+            <p class="cr-stat__hint">Ожидают вручения клиентам</p>
+          </div>
+        </div>
+        <div class="cr-stat">
+          <span class="cr-stat__icon cr-stat__icon--green"><img src="../img/check-circle.svg" width="22" height="22" alt=""></span>
+          <div>
+            <p class="cr-stat__value"><b data-cr-stat="delivered">1</b> <span data-cr-caption="delivered">доставлен</span></p>
+            <p class="cr-stat__hint">Спасибо за вашу работу!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Список заказов -->
+    <section class="cr-list">
+      <div class="cr-filters">
+        <div class="cr-tabs" role="group" aria-label="Фильтр доставок">
+          <button class="cr-tab is-active" type="button" data-cr-filter="all">Все заказы <span data-cr-filter-count>4</span></button>
+          <button class="cr-tab" type="button" data-cr-filter="transit">В пути <span data-cr-filter-count>3</span></button>
+          <button class="cr-tab" type="button" data-cr-filter="delivered">Доставлены <span data-cr-filter-count>1</span></button>
+        </div>
+
+        <button class="cr-refresh" type="button" data-cr-refresh>
+          <img src="../img/refresh.svg" width="14" height="14" alt="">
+          <span data-cr-updated>Обновлено в 12:05</span>
+        </button>
+      </div>
+
+      <article class="cr-card" data-status="transit" data-comment="Позвонить за 15 минут до приезда." data-delivered-text="">
+        <div class="cr-card__head">
+          <div class="cr-card__info">
+            <h2 class="cr-card__number">Заказ № 1048</h2>
+            <span class="cr-chip">
+              <img src="../img/package-check-green.svg" width="14" height="14" alt="">
+              Произведено
+            </span>
+            <span class="cr-interval">
+              <img src="../img/clock-gray.svg" width="15" height="15" alt="">
+              12:00–14:00
+            </span>
+          </div>
+
+          <div class="cr-card__control">
+            <span class="cr-card__control-label">Доставка</span>
+            <div class="cr-segment" role="radiogroup" aria-label="Статус доставки заказа № 1048">
+              <label class="cr-segment__option">
+                <input type="radio" name="delivery-1048" value="transit" checked>
+                <span class="cr-option cr-option--transit">В пути</span>
+              </label>
+              <label class="cr-segment__option">
+                <input type="radio" name="delivery-1048" value="delivered">
+                <span class="cr-option cr-option--done">Доставлен</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="cr-card__details">
+          <div class="cr-client">
+            <p class="cr-label">Клиент</p>
+            <p class="cr-client__name">Соколова Анна Сергеевна</p>
+            <a class="cr-client__phone" href="tel:+79162457832">
+              <img src="../img/phone.svg" width="16" height="16" alt="">
+              +7 (916) 245-78-32
+            </a>
+          </div>
+
+          <div class="cr-address">
+            <p class="cr-label">Адрес доставки</p>
+            <p class="cr-address__main">г. Москва, ул. Большая Тульская, д. 2, кв. 84</p>
+            <p class="cr-address__sub">Подъезд 2 · этаж 7 · домофон 84</p>
+            <p class="cr-note">
+              <img class="cr-note__icon cr-note__icon--comment" src="../img/message.svg" width="14" height="14" alt="">
+              <img class="cr-note__icon cr-note__icon--done" src="../img/check-check.svg" width="14" height="14" alt="">
+              <span data-cr-note-text>Позвонить за 15 минут до приезда.</span>
+            </p>
+          </div>
+
+          <div class="cr-composition">
+            <div class="cr-composition__head">
+              <p class="cr-label">Состав заказа</p>
+              <p class="cr-composition__count">2 позиции</p>
+            </div>
+                <div class="cr-item">
+                  <div>
+                    <p class="cr-item__name">Чизкейк «Нью-Йорк»</p>
+                    <p class="cr-item__meta">Целый · 1,2 кг</p>
+                  </div>
+                  <p class="cr-item__qty">1 шт.</p>
+                </div>
+                <div class="cr-item">
+                  <div>
+                    <p class="cr-item__name">Круассан с миндалём</p>
+                    <p class="cr-item__meta">Свежая выпечка · 90 г</p>
+                  </div>
+                  <p class="cr-item__qty">4 шт.</p>
+                </div>
+          </div>
+        </div>
+      </article>
+      <article class="cr-card" data-status="transit" data-comment="Вход во двор со стороны улицы Шаболовка." data-delivered-text="">
+        <div class="cr-card__head">
+          <div class="cr-card__info">
+            <h2 class="cr-card__number">Заказ № 1049</h2>
+            <span class="cr-chip">
+              <img src="../img/package-check-green.svg" width="14" height="14" alt="">
+              Произведено
+            </span>
+            <span class="cr-interval">
+              <img src="../img/clock-gray.svg" width="15" height="15" alt="">
+              13:00–15:00
+            </span>
+          </div>
+
+          <div class="cr-card__control">
+            <span class="cr-card__control-label">Доставка</span>
+            <div class="cr-segment" role="radiogroup" aria-label="Статус доставки заказа № 1049">
+              <label class="cr-segment__option">
+                <input type="radio" name="delivery-1049" value="transit" checked>
+                <span class="cr-option cr-option--transit">В пути</span>
+              </label>
+              <label class="cr-segment__option">
+                <input type="radio" name="delivery-1049" value="delivered">
+                <span class="cr-option cr-option--done">Доставлен</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="cr-card__details">
+          <div class="cr-client">
+            <p class="cr-label">Клиент</p>
+            <p class="cr-client__name">Морозов Дмитрий Андреевич</p>
+            <a class="cr-client__phone" href="tel:+79256184091">
+              <img src="../img/phone.svg" width="16" height="16" alt="">
+              +7 (925) 618-40-91
+            </a>
+          </div>
+
+          <div class="cr-address">
+            <p class="cr-label">Адрес доставки</p>
+            <p class="cr-address__main">г. Москва, ул. Шаболовка, д. 23, корп. 1, кв. 56</p>
+            <p class="cr-address__sub">Подъезд 1 · этаж 4 · домофон 56</p>
+            <p class="cr-note">
+              <img class="cr-note__icon cr-note__icon--comment" src="../img/message.svg" width="14" height="14" alt="">
+              <img class="cr-note__icon cr-note__icon--done" src="../img/check-check.svg" width="14" height="14" alt="">
+              <span data-cr-note-text>Вход во двор со стороны улицы Шаболовка.</span>
+            </p>
+          </div>
+
+          <div class="cr-composition">
+            <div class="cr-composition__head">
+              <p class="cr-label">Состав заказа</p>
+              <p class="cr-composition__count">2 позиции</p>
+            </div>
+                <div class="cr-item">
+                  <div>
+                    <p class="cr-item__name">Торт «Медовик»</p>
+                    <p class="cr-item__meta">Целый · 1 кг</p>
+                  </div>
+                  <p class="cr-item__qty">1 шт.</p>
+                </div>
+                <div class="cr-item">
+                  <div>
+                    <p class="cr-item__name">Эклер ванильный</p>
+                    <p class="cr-item__meta">Набор · 6 штук</p>
+                  </div>
+                  <p class="cr-item__qty">1 наб.</p>
+                </div>
+          </div>
+        </div>
+      </article>
+      <article class="cr-card" data-status="transit" data-comment="Передать лично клиенту, не оставлять на ресепшене." data-delivered-text="">
+        <div class="cr-card__head">
+          <div class="cr-card__info">
+            <h2 class="cr-card__number">Заказ № 1052</h2>
+            <span class="cr-chip">
+              <img src="../img/package-check-green.svg" width="14" height="14" alt="">
+              Произведено
+            </span>
+            <span class="cr-interval">
+              <img src="../img/clock-gray.svg" width="15" height="15" alt="">
+              14:00–16:00
+            </span>
+          </div>
+
+          <div class="cr-card__control">
+            <span class="cr-card__control-label">Доставка</span>
+            <div class="cr-segment" role="radiogroup" aria-label="Статус доставки заказа № 1052">
+              <label class="cr-segment__option">
+                <input type="radio" name="delivery-1052" value="transit" checked>
+                <span class="cr-option cr-option--transit">В пути</span>
+              </label>
+              <label class="cr-segment__option">
+                <input type="radio" name="delivery-1052" value="delivered">
+                <span class="cr-option cr-option--done">Доставлен</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="cr-card__details">
+          <div class="cr-client">
+            <p class="cr-label">Клиент</p>
+            <p class="cr-client__name">Кузнецова Елена Викторовна</p>
+            <a class="cr-client__phone" href="tel:+79034721568">
+              <img src="../img/phone.svg" width="16" height="16" alt="">
+              +7 (903) 472-15-68
+            </a>
+          </div>
+
+          <div class="cr-address">
+            <p class="cr-label">Адрес доставки</p>
+            <p class="cr-address__main">г. Москва, Ленинский проспект, д. 15, офис 312</p>
+            <p class="cr-address__sub">Бизнес-центр · этаж 3 · центральный вход</p>
+            <p class="cr-note">
+              <img class="cr-note__icon cr-note__icon--comment" src="../img/message.svg" width="14" height="14" alt="">
+              <img class="cr-note__icon cr-note__icon--done" src="../img/check-check.svg" width="14" height="14" alt="">
+              <span data-cr-note-text>Передать лично клиенту, не оставлять на ресепшене.</span>
+            </p>
+          </div>
+
+          <div class="cr-composition">
+            <div class="cr-composition__head">
+              <p class="cr-label">Состав заказа</p>
+              <p class="cr-composition__count">3 позиции</p>
+            </div>
+                <div class="cr-item">
+                  <div>
+                    <p class="cr-item__name">Киш с курицей и грибами</p>
+                    <p class="cr-item__meta">Целый · 800 г</p>
+                  </div>
+                  <p class="cr-item__qty">2 шт.</p>
+                </div>
+                <div class="cr-item">
+                  <div>
+                    <p class="cr-item__name">Тарталетка с ягодами</p>
+                    <p class="cr-item__meta">Порционная · 120 г</p>
+                  </div>
+                  <p class="cr-item__qty">6 шт.</p>
+                </div>
+                <div class="cr-item">
+                  <div>
+                    <p class="cr-item__name">Печенье овсяное</p>
+                    <p class="cr-item__meta">Упаковка · 300 г</p>
+                  </div>
+                  <p class="cr-item__qty">1 уп.</p>
+                </div>
+          </div>
+        </div>
+      </article>
+      <article class="cr-card" data-status="delivered" data-comment="" data-delivered-text="Вручено клиенту в 11:24.">
+        <div class="cr-card__head">
+          <div class="cr-card__info">
+            <h2 class="cr-card__number">Заказ № 1043</h2>
+            <span class="cr-chip">
+              <img src="../img/package-check-green.svg" width="14" height="14" alt="">
+              Произведено
+            </span>
+            <span class="cr-interval">
+              <img src="../img/clock-gray.svg" width="15" height="15" alt="">
+              10:00–12:00
+            </span>
+          </div>
+
+          <div class="cr-card__control">
+            <span class="cr-card__control-label">Доставка</span>
+            <div class="cr-segment" role="radiogroup" aria-label="Статус доставки заказа № 1043">
+              <label class="cr-segment__option">
+                <input type="radio" name="delivery-1043" value="transit">
+                <span class="cr-option cr-option--transit">В пути</span>
+              </label>
+              <label class="cr-segment__option">
+                <input type="radio" name="delivery-1043" value="delivered" checked>
+                <span class="cr-option cr-option--done">Доставлен</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="cr-card__details">
+          <div class="cr-client">
+            <p class="cr-label">Клиент</p>
+            <p class="cr-client__name">Павлов Игорь Александрович</p>
+            <a class="cr-client__phone" href="tel:+79853916204">
+              <img src="../img/phone.svg" width="16" height="16" alt="">
+              +7 (985) 391-62-04
+            </a>
+          </div>
+
+          <div class="cr-address">
+            <p class="cr-label">Адрес доставки</p>
+            <p class="cr-address__main">г. Москва, ул. Мытная, д. 7, стр. 1, кв. 112</p>
+            <p class="cr-address__sub">Подъезд 3 · этаж 9 · домофон 112</p>
+            <p class="cr-note is-done">
+              <img class="cr-note__icon cr-note__icon--comment" src="../img/message.svg" width="14" height="14" alt="">
+              <img class="cr-note__icon cr-note__icon--done" src="../img/check-check.svg" width="14" height="14" alt="">
+              <span data-cr-note-text>Вручено клиенту в 11:24.</span>
+            </p>
+          </div>
+
+          <div class="cr-composition">
+            <div class="cr-composition__head">
+              <p class="cr-label">Состав заказа</p>
+              <p class="cr-composition__count">2 позиции</p>
+            </div>
+                <div class="cr-item">
+                  <div>
+                    <p class="cr-item__name">Чизкейк шоколадный</p>
+                    <p class="cr-item__meta">Целый · 1,2 кг</p>
+                  </div>
+                  <p class="cr-item__qty">1 шт.</p>
+                </div>
+                <div class="cr-item">
+                  <div>
+                    <p class="cr-item__name">Булочка с корицей</p>
+                    <p class="cr-item__meta">Свежая выпечка · 110 г</p>
+                  </div>
+                  <p class="cr-item__qty">3 шт.</p>
+                </div>
+          </div>
+        </div>
+      </article>
+
+      <p class="cr-empty" hidden>В этой категории пока нет заказов</p>
+    </section>
+
+  </main>
+
+</body>
+
+</html>

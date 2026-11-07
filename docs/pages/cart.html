@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="only light">
+  <title>Корзина — Сдобс Фудс</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/main.js" defer type="module"></script>
+</head>
+
+<body>
+
+  <!-- Шапка -->
+  <header class="header header--static">
+    <div class="header__inner">
+
+      <a class="logo" href="../index.html">
+        <img src="../img/logo.svg" alt="Сдобс Фудс">
+      </a>
+
+      <nav class="nav">
+        <div class="dropdown">
+          <a class="dropdown__link" href="./catalogue.html">Каталог</a>
+          <button class="dropdown__toggle" type="button" aria-expanded="false" aria-controls="catalog-menu" aria-label="Разделы каталога">
+            <img src="../img/arrow.svg" width="13" height="9" alt="">
+          </button>
+          <ul class="dropdown__menu" id="catalog-menu">
+            <li><a href="./catalogue.html#cheesecakes">Чизкейки</a></li>
+            <li><a href="./catalogue.html#desserts">Десерты</a></li>
+            <li><a href="./catalogue.html#cakes">Торты</a></li>
+          </ul>
+        </div>
+        <a href="./about.html">О нас</a>
+      </nav>
+
+      <div class="icons">
+        <a href="./cart.html" aria-label="Корзина">
+          <img src="../img/cart.svg" width="56" height="56" alt="">
+        </a>
+        <div class="dropdown">
+          <button class="dropdown__toggle dropdown__toggle--icon" type="button" aria-expanded="false" aria-controls="profile-menu" aria-label="Профиль">
+            <img src="../img/user.svg" width="56" height="56" alt="">
+          </button>
+          <div class="dropdown__menu dropdown__menu--profile" id="profile-menu">
+            <a class="dropdown__action" href="./login.html">Авторизоваться</a>
+            <a href="./profile.html">Изменить данные</a>
+            <a href="./orders.html">Мои заказы</a>
+          </div>
+        </div>
+      </div>
+
+      <button class="burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Открыть меню">
+        <img src="../img/burger.svg" alt="">
+      </button>
+
+    </div>
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Меню сайта">
+      <ul class="mobile-menu__list">
+        <li>
+          <a class="mobile-menu__link" href="./catalogue.html">Каталог</a>
+          <ul class="mobile-menu__sub">
+            <li><a href="./catalogue.html#cheesecakes">Чизкейки</a></li>
+            <li><a href="./catalogue.html#desserts">Десерты</a></li>
+            <li><a href="./catalogue.html#cakes">Торты</a></li>
+          </ul>
+        </li>
+        <li><a class="mobile-menu__link" href="./about.html">О нас</a></li>
+        <li><a class="mobile-menu__link" href="./cart.html">Корзина</a></li>
+        <li>
+          <p class="mobile-menu__link">Профиль</p>
+          <ul class="mobile-menu__sub">
+            <li><a class="mobile-menu__action" href="./login.html">Авторизоваться</a></li>
+            <li><a href="./profile.html">Изменить данные</a></li>
+            <li><a href="./orders.html">Мои заказы</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="cart-page" data-cart>
+    <div class="cart">
+
+      <div class="cart__head">
+        <h1 class="cart__title">Корзина</h1>
+        <p class="cart__count" data-cart-count>3 товара · 2 позиции</p>
+      </div>
+
+      <div class="cart__body">
+
+        <!-- Товары -->
+        <div class="cart__list">
+          <ul class="cart__items">
+        <li class="cart-item" data-price="1500">
+          <div class="cart-item__main">
+            <img class="cart-item__photo" src="../img/cakes/cake1.png" alt="">
+            <div class="cart-item__info">
+              <h2 class="cart-item__title">Название торта</h2>
+              <p class="cart-item__meta">Артикул: 500290102</p>
+          <p class="cart-item__weight">Вес: 500 гр</p>
+              <p class="cart-item__price">1 500 ₽ / шт.</p>
+            </div>
+          </div>
+
+          <div class="cart-item__bottom">
+            <div class="cart-item__qty">
+              <button class="cart-item__qty-btn" type="button" data-action="decrease" aria-label="Уменьшить количество">
+                <img src="../img/minus.svg" alt="">
+              </button>
+              <span class="cart-item__qty-value" data-qty>2</span>
+              <button class="cart-item__qty-btn" type="button" data-action="increase" aria-label="Увеличить количество">
+                <img src="../img/plus.svg" alt="">
+              </button>
+            </div>
+
+            <button class="cart-item__remove" type="button" data-action="remove" aria-label="Удалить товар">
+              <img class="cart-item__remove-x" src="../img/close.svg" alt="">
+              <img class="cart-item__remove-trash" src="../img/trash.svg" alt="">
+            </button>
+
+            <p class="cart-item__total" data-line-total>3 000 ₽</p>
+          </div>
+        </li>
+        <li class="cart-item" data-price="1200">
+          <div class="cart-item__main">
+            <img class="cart-item__photo" src="../img/cakes/cake2.png" alt="">
+            <div class="cart-item__info">
+              <h2 class="cart-item__title">Название</h2>
+              <p class="cart-item__meta">Чизкейки</p>
+              <p class="cart-item__price">1 200 ₽ / шт.</p>
+            </div>
+          </div>
+
+          <div class="cart-item__bottom">
+            <div class="cart-item__qty">
+              <button class="cart-item__qty-btn" type="button" data-action="decrease" aria-label="Уменьшить количество">
+                <img src="../img/minus.svg" alt="">
+              </button>
+              <span class="cart-item__qty-value" data-qty>1</span>
+              <button class="cart-item__qty-btn" type="button" data-action="increase" aria-label="Увеличить количество">
+                <img src="../img/plus.svg" alt="">
+              </button>
+            </div>
+
+            <button class="cart-item__remove" type="button" data-action="remove" aria-label="Удалить товар">
+              <img class="cart-item__remove-x" src="../img/close.svg" alt="">
+              <img class="cart-item__remove-trash" src="../img/trash.svg" alt="">
+            </button>
+
+            <p class="cart-item__total" data-line-total>1 200 ₽</p>
+          </div>
+        </li>
+          </ul>
+
+          <a class="cart__back" href="./catalogue.html">
+            <img src="../img/arrow-left.svg" width="20" height="20" alt="">
+            Продолжить покупки
+          </a>
+        </div>
+
+        <!-- Итог заказа -->
+        <aside class="cart-summary">
+          <h2 class="cart-summary__title">Ваш заказ</h2>
+
+          <div class="cart-summary__row">
+            <p data-cart-units>Товары, 3 шт.</p>
+            <p class="cart-summary__sum" data-cart-subtotal>4 200 ₽</p>
+          </div>
+
+          <hr class="cart-summary__divider">
+
+          <div class="cart-summary__row cart-summary__row--total">
+            <p class="cart-summary__label">Итого</p>
+            <p class="cart-summary__total" data-cart-total>4 200 ₽</p>
+          </div>
+
+          <button class="cart-summary__submit" type="button">Оформить заказ</button>
+
+          <p class="cart-summary__note">Контактные данные и способ получения — на следующем шаге.</p>
+        </aside>
+
+      </div>
+
+      <!-- Пустая корзина -->
+      <div class="cart-empty" hidden>
+        <p class="cart-empty__text">В корзине пока ничего нет</p>
+        <a class="btn" href="./catalogue.html">Перейти в каталог</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Футер -->
+  <footer class="footer">
+    <div class="footer__inner">
+
+      <div class="footer__row">
+        <a class="logo" href="../index.html">
+          <img src="../img/logo.svg" alt="Сдобс Фудс">
+        </a>
+
+        <div class="footer__rest">
+          <div class="footer__social">
+            <a href="#">
+              <img src="../img/vk.svg" width="48" height="48" alt="ВКонтакте">
+            </a>
+            <a href="#">
+              <img src="../img/telegram.svg" width="48" height="48" alt="Телеграм">
+            </a>
+          </div>
+
+          <div class="footer__contacts">
+            <a href="tel:+79005555555">+7 (900) 555 55 55</a>
+            <a href="mailto:info@sdobsf.ru">info@sdobsf.ru</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="footer__copy">© ООО “Сдобс Фудс”. 2026</p>
+
+    </div>
+  </footer>
+
+</body>
+
+</html>

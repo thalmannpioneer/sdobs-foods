@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="only light">
+  <title>О нас — Сдобс Фудс</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/main.js" defer type="module"></script>
+</head>
+
+<body>
+
+  <!-- Шапка -->
+  <header class="header header--static">
+    <div class="header__inner">
+
+      <a class="logo" href="../index.html">
+        <img src="../img/logo.svg" alt="Сдобс Фудс">
+      </a>
+
+      <nav class="nav">
+        <div class="dropdown">
+          <a class="dropdown__link" href="./catalogue.html">Каталог</a>
+          <button class="dropdown__toggle" type="button" aria-expanded="false" aria-controls="catalog-menu" aria-label="Разделы каталога">
+            <img src="../img/arrow.svg" width="13" height="9" alt="">
+          </button>
+          <ul class="dropdown__menu" id="catalog-menu">
+            <li><a href="./catalogue.html#cheesecakes">Чизкейки</a></li>
+            <li><a href="./catalogue.html#desserts">Десерты</a></li>
+            <li><a href="./catalogue.html#cakes">Торты</a></li>
+          </ul>
+        </div>
+        <a href="./about.html">О нас</a>
+      </nav>
+
+      <div class="icons">
+        <a href="./cart.html" aria-label="Корзина">
+          <img src="../img/cart.svg" width="56" height="56" alt="">
+        </a>
+        <div class="dropdown">
+          <button class="dropdown__toggle dropdown__toggle--icon" type="button" aria-expanded="false" aria-controls="profile-menu" aria-label="Профиль">
+            <img src="../img/user.svg" width="56" height="56" alt="">
+          </button>
+          <div class="dropdown__menu dropdown__menu--profile" id="profile-menu">
+            <a class="dropdown__action" href="./login.html">Авторизоваться</a>
+            <a href="./profile.html">Изменить данные</a>
+            <a href="./orders.html">Мои заказы</a>
+          </div>
+        </div>
+      </div>
+
+      <button class="burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Открыть меню">
+        <img src="../img/burger.svg" alt="">
+      </button>
+
+    </div>
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Меню сайта">
+      <ul class="mobile-menu__list">
+        <li>
+          <a class="mobile-menu__link" href="./catalogue.html">Каталог</a>
+          <ul class="mobile-menu__sub">
+            <li><a href="./catalogue.html#cheesecakes">Чизкейки</a></li>
+            <li><a href="./catalogue.html#desserts">Десерты</a></li>
+            <li><a href="./catalogue.html#cakes">Торты</a></li>
+          </ul>
+        </li>
+        <li><a class="mobile-menu__link" href="./about.html">О нас</a></li>
+        <li><a class="mobile-menu__link" href="./cart.html">Корзина</a></li>
+        <li>
+          <p class="mobile-menu__link">Профиль</p>
+          <ul class="mobile-menu__sub">
+            <li><a class="mobile-menu__action" href="./login.html">Авторизоваться</a></li>
+            <li><a href="./profile.html">Изменить данные</a></li>
+            <li><a href="./orders.html">Мои заказы</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="about-page">
+
+    <!-- О компании -->
+    <section class="company">
+      <div class="company__inner">
+        <img class="company__img" src="../img/award.png" alt="Диплом «Бренд года в России 2024»">
+
+        <div class="company__text">
+          <h2>сдобс фудс</h2>
+          <p>
+            Таким образом рамки и место обучения кадров влечет за собой процесс внедрения и
+            модернизации систем массового участия. Идейные соображения высшего порядка.
+          </p>
+          <p>
+            Товарищи! постоянный количественный рост и сфера нашей активности обеспечивает
+            широкому кругу (специалистов) участие в формировании системы обучения кадров,
+            соответствует насущным потребностям. Не следует, однако забывать, что реализация
+            намеченных плановых заданий способствует подготовки и реализации систем массового
+            участия. Равным образом консультация с широким активом.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Партнёры -->
+    <section class="partners">
+      <div class="partners__inner">
+        <img class="decor partners__decor" src="../img/dots.svg" alt="">
+
+        <div class="partners__content">
+          <h2>наши партнеры</h2>
+          <ul class="partners__list">
+          <li>ВкусВилл</li>
+          <li>Озон</li>
+          <li>Мираторг</li>
+          <li>Лента</li>
+          <li>Самокат</li>
+          <li>Магнит</li>
+          <li>Пятёрочка</li>
+          <li>Перекрёсток</li>
+          <li>Чижик</li>
+          </ul>
+        </div>
+
+        <img class="partners__photo" src="../img/partners.png" alt="Продукция на производстве">
+      </div>
+    </section>
+
+    <!-- Производство -->
+    <section class="production">
+      <div class="production__inner">
+        <h2 class="production__title">наше производство</h2>
+
+        <img class="decor production__decor" src="../img/dots.svg" alt="">
+
+        <div class="video">
+          <img class="video__poster" src="../img/production.png" alt="Наше производство">
+          <button class="video__play" type="button" aria-label="Воспроизвести видео">
+            <img src="../img/play.svg" alt="">
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Сертификаты -->
+    <section class="certificates">
+      <div class="certificates__inner">
+        <h2 class="certificates__title">сертификаты</h2>
+
+        <div class="carousel" data-carousel aria-roledescription="carousel" aria-label="Сертификаты">
+          <div class="carousel__viewport">
+            <ul class="carousel__track">
+          <li class="carousel__slide">
+            <img src="../img/certificates/cert1.png" alt="Сертификат 1">
+          </li>
+          <li class="carousel__slide">
+            <img src="../img/certificates/cert2.png" alt="Сертификат 2">
+          </li>
+          <li class="carousel__slide">
+            <img src="../img/certificates/cert3.jpg" alt="Сертификат 3">
+          </li>
+          <li class="carousel__slide">
+            <img src="../img/certificates/cert4.jpg" alt="Сертификат 4">
+          </li>
+          <li class="carousel__slide">
+            <img src="../img/certificates/cert5.jpg" alt="Сертификат 5">
+          </li>
+          <li class="carousel__slide">
+            <img src="../img/certificates/cert6.jpg" alt="Сертификат 6">
+          </li>
+          <li class="carousel__slide">
+            <img src="../img/certificates/cert7.jpg" alt="Сертификат 7">
+          </li>
+            </ul>
+          </div>
+
+          <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Предыдущий сертификат">
+            <img src="../img/carousel-arrow.svg" alt="">
+          </button>
+          <button class="carousel__btn carousel__btn--next" type="button" aria-label="Следующий сертификат">
+            <img src="../img/carousel-arrow.svg" alt="">
+          </button>
+
+          <div class="carousel__dots"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Футер -->
+  <footer class="footer">
+    <div class="footer__inner">
+
+      <div class="footer__row">
+        <a class="logo" href="../index.html">
+          <img src="../img/logo.svg" alt="Сдобс Фудс">
+        </a>
+
+        <div class="footer__rest">
+          <div class="footer__social">
+            <a href="#">
+              <img src="../img/vk.svg" width="48" height="48" alt="ВКонтакте">
+            </a>
+            <a href="#">
+              <img src="../img/telegram.svg" width="48" height="48" alt="Телеграм">
+            </a>
+          </div>
+
+          <div class="footer__contacts">
+            <a href="tel:+79005555555">+7 (900) 555 55 55</a>
+            <a href="mailto:info@sdobsf.ru">info@sdobsf.ru</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="footer__copy">© ООО “Сдобс Фудс”. 2026</p>
+
+    </div>
+  </footer>
+
+</body>
+
+</html>

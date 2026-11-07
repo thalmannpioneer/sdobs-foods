@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="only light">
+  <title>Кабинет администратора — Сдобс Фудс</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/main.js" defer type="module"></script>
+</head>
+
+<body class="ad-page">
+
+  <!-- Шапка сайта -->
+  <header class="ad-header">
+    <div class="ad-header__inner">
+      <a class="logo" href="../index.html">
+        <img src="../img/logo.svg" alt="Сдобс Фудс">
+      </a>
+
+      <nav class="ad-nav">
+        <div class="dropdown">
+          <a class="dropdown__link" href="./catalogue.html">Каталог продукции</a>
+          <button class="dropdown__toggle" type="button" aria-expanded="false" aria-controls="catalog-menu" aria-label="Разделы каталога">
+            <img src="../img/arrow.svg" width="13" height="9" alt="">
+          </button>
+          <ul class="dropdown__menu" id="catalog-menu">
+            <li><a href="./catalogue.html#cheesecakes">Чизкейки</a></li>
+            <li><a href="./catalogue.html#desserts">Десерты</a></li>
+            <li><a href="./catalogue.html#cakes">Торты</a></li>
+          </ul>
+        </div>
+        <a href="./profile.html">Личный кабинет</a>
+      </nav>
+
+      <a class="ad-header__profile" href="./profile.html" aria-label="Профиль">
+        <img src="../img/user.svg" width="56" height="56" alt="">
+      </a>
+    </div>
+  </header>
+
+  <div class="ad-workspace" data-admin>
+
+    <!-- Боковое меню кабинета -->
+    <aside class="ad-sidebar">
+      <div class="ad-sidebar__top">
+        <div class="ad-sidebar__title">
+          <p class="ad-sidebar__name">Администратор</p>
+          <p>Управление сайтом</p>
+        </div>
+
+        <nav class="ad-menu" aria-label="Разделы кабинета">
+        <a class="ad-nav__item is-active" href="#users" data-admin-nav="users">
+          <span class="ad-icon" style="--icon: url('../img/users.svg')"></span>
+          Пользователи
+        </a>
+        <a class="ad-nav__item" href="#archive" data-admin-nav="archive">
+          <span class="ad-icon" style="--icon: url('../img/archive.svg')"></span>
+          Архив заказов
+        </a>
+        <a class="ad-nav__item" href="#reports" data-admin-nav="reports">
+          <span class="ad-icon" style="--icon: url('../img/chart.svg')"></span>
+          Отчетность
+        </a>
+        </nav>
+      </div>
+
+      <div class="ad-account">
+        <div class="ad-account__user">
+          <span class="ad-account__avatar">ЕВ</span>
+          <div>
+            <p class="ad-account__name">Елена Волкова</p>
+            <p class="ad-account__role">Администратор</p>
+          </div>
+        </div>
+        <a class="ad-account__logout" href="./login.html">
+          <span class="ad-icon ad-icon--small" style="--icon: url('../img/log-out.svg')"></span>
+          Выйти из кабинета
+        </a>
+      </div>
+    </aside>
+
+    <main class="ad-content">
+
+      <!-- Пользователи -->
+      <section class="ad-section" data-admin-section="users">
+      <p class="ad-crumbs">
+        Личный кабинет
+        <img src="../img/chevron-right.svg" width="12" height="12" alt="">
+        <span>Пользователи</span>
+      </p>
+
+        <div class="ad-heading">
+          <h1>Пользователи</h1>
+          <p>Зарегистрированные пользователи, контактные данные и роли доступа.</p>
+        </div>
+
+        <div class="ad-card">
+          <div class="ad-card__title">
+            <h2>Все пользователи</h2>
+            <span class="ad-badge">128</span>
+            <p class="ad-muted">Клиенты и сотрудники</p>
+          </div>
+
+          <div class="ad-filters">
+            <label class="ad-field ad-field--wide">
+              Поиск пользователя
+              <input class="ad-input" type="search" placeholder="Имя, электронная почта или телефон" data-users-search>
+            </label>
+            <label class="ad-field ad-field--role">
+              Роль пользователя
+              <select class="ad-input ad-select" data-users-role>
+                <option value="all">Все роли</option>
+                <option value="client">Клиент</option>
+                <option value="courier">Курьер</option>
+                <option value="production">Начальник производства</option>
+                <option value="manager">Менеджер</option>
+                <option value="admin">Администратор</option>
+              </select>
+            </label>
+            <button class="ad-btn ad-btn--primary ad-btn--find" type="button" data-users-apply>Найти</button>
+            <button class="ad-link" type="button" data-users-reset>Сбросить</button>
+          </div>
+
+          <div class="ad-table__head ad-table__head--users">
+            <p>Пользователь</p>
+            <p>Контактные данные</p>
+            <p>Роль</p>
+            <button class="ad-sort" type="button" data-users-sort>Регистрация ↓</button>
+            <p>Действие</p>
+          </div>
+
+          <ul class="ad-table__body ad-table__body--users" data-total="128">
+          <li class="ad-row ad-user" data-name="Игорь Павлов" data-org="Пекарня «Тёплый хлеб»" data-email="i.pavlov@teplyhleb.ru" data-phone="+7 (985) 391-62-04" data-role="client" data-date="2026-10-23">
+            <div class="ad-cell ad-cell--user">
+              <p class="ad-strong" data-cell="name">Игорь Павлов</p>
+              <p class="ad-muted ad-small" data-cell="org">Пекарня «Тёплый хлеб»</p>
+            </div>
+            <div class="ad-cell ad-cell--contacts">
+              <p data-cell="email">i.pavlov@teplyhleb.ru</p>
+              <p class="ad-muted ad-small" data-cell="phone">+7 (985) 391-62-04</p>
+            </div>
+            <p class="ad-role" data-cell="role">Клиент</p>
+            <p class="ad-muted">23.10.2026</p>
+            <button class="ad-btn ad-btn--light" type="button" data-user-edit>Редактировать</button>
+          </li>
+          <li class="ad-row ad-user" data-name="Елена Кузнецова" data-org="ООО «Городское кафе»" data-email="elena@gorodcafe.ru" data-phone="+7 (903) 472-15-68" data-role="client" data-date="2026-09-05">
+            <div class="ad-cell ad-cell--user">
+              <p class="ad-strong" data-cell="name">Елена Кузнецова</p>
+              <p class="ad-muted ad-small" data-cell="org">ООО «Городское кафе»</p>
+            </div>
+            <div class="ad-cell ad-cell--contacts">
+              <p data-cell="email">elena@gorodcafe.ru</p>
+              <p class="ad-muted ad-small" data-cell="phone">+7 (903) 472-15-68</p>
+            </div>
+            <p class="ad-role" data-cell="role">Клиент</p>
+            <p class="ad-muted">05.09.2026</p>
+            <button class="ad-btn ad-btn--light" type="button" data-user-edit>Редактировать</button>
+          </li>
+          <li class="ad-row ad-user" data-name="Дмитрий Морозов" data-org="Кофейня «Зерно»" data-email="d.morozov@zerno.ru" data-phone="+7 (925) 618-40-91" data-role="client" data-date="2026-08-18">
+            <div class="ad-cell ad-cell--user">
+              <p class="ad-strong" data-cell="name">Дмитрий Морозов</p>
+              <p class="ad-muted ad-small" data-cell="org">Кофейня «Зерно»</p>
+            </div>
+            <div class="ad-cell ad-cell--contacts">
+              <p data-cell="email">d.morozov@zerno.ru</p>
+              <p class="ad-muted ad-small" data-cell="phone">+7 (925) 618-40-91</p>
+            </div>
+            <p class="ad-role" data-cell="role">Клиент</p>
+            <p class="ad-muted">18.08.2026</p>
+            <button class="ad-btn ad-btn--light" type="button" data-user-edit>Редактировать</button>
+          </li>
+          <li class="ad-row ad-user" data-name="Анна Соколова" data-org="ООО «Хлебная лавка»" data-email="anna@hleblavka.ru" data-phone="+7 (916) 245-78-32" data-role="client" data-date="2026-07-10">
+            <div class="ad-cell ad-cell--user">
+              <p class="ad-strong" data-cell="name">Анна Соколова</p>
+              <p class="ad-muted ad-small" data-cell="org">ООО «Хлебная лавка»</p>
+            </div>
+            <div class="ad-cell ad-cell--contacts">
+              <p data-cell="email">anna@hleblavka.ru</p>
+              <p class="ad-muted ad-small" data-cell="phone">+7 (916) 245-78-32</p>
+            </div>
+            <p class="ad-role" data-cell="role">Клиент</p>
+            <p class="ad-muted">10.07.2026</p>
+            <button class="ad-btn ad-btn--light" type="button" data-user-edit>Редактировать</button>
+          </li>
+          <li class="ad-row ad-user" data-name="Алексей Козлов" data-org="СДОБС ФУДС" data-email="a.kozlov@sdobsf.ru" data-phone="+7 (916) 682-14-73" data-role="courier" data-date="2026-04-21">
+            <div class="ad-cell ad-cell--user">
+              <p class="ad-strong" data-cell="name">Алексей Козлов</p>
+              <p class="ad-muted ad-small" data-cell="org">СДОБС ФУДС</p>
+            </div>
+            <div class="ad-cell ad-cell--contacts">
+              <p data-cell="email">a.kozlov@sdobsf.ru</p>
+              <p class="ad-muted ad-small" data-cell="phone">+7 (916) 682-14-73</p>
+            </div>
+            <p class="ad-role is-staff" data-cell="role">Курьер</p>
+            <p class="ad-muted">21.04.2026</p>
+            <button class="ad-btn ad-btn--light" type="button" data-user-edit>Редактировать</button>
+          </li>
+          <li class="ad-row ad-user" data-name="Александр Соколов" data-org="СДОБС ФУДС" data-email="a.sokolov@sdobsf.ru" data-phone="+7 (903) 511-38-20" data-role="production" data-date="2026-03-03">
+            <div class="ad-cell ad-cell--user">
+              <p class="ad-strong" data-cell="name">Александр Соколов</p>
+              <p class="ad-muted ad-small" data-cell="org">СДОБС ФУДС</p>
+            </div>
+            <div class="ad-cell ad-cell--contacts">
+              <p data-cell="email">a.sokolov@sdobsf.ru</p>
+              <p class="ad-muted ad-small" data-cell="phone">+7 (903) 511-38-20</p>
+            </div>
+            <p class="ad-role is-staff" data-cell="role">Начальник производства</p>
+            <p class="ad-muted">03.03.2026</p>
+            <button class="ad-btn ad-btn--light" type="button" data-user-edit>Редактировать</button>
+          </li>
+          <li class="ad-row ad-user" data-name="Мария Смирнова" data-org="СДОБС ФУДС" data-email="m.smirnova@sdobsf.ru" data-phone="+7 (925) 401-26-80" data-role="manager" data-date="2026-02-15">
+            <div class="ad-cell ad-cell--user">
+              <p class="ad-strong" data-cell="name">Мария Смирнова</p>
+              <p class="ad-muted ad-small" data-cell="org">СДОБС ФУДС</p>
+            </div>
+            <div class="ad-cell ad-cell--contacts">
+              <p data-cell="email">m.smirnova@sdobsf.ru</p>
+              <p class="ad-muted ad-small" data-cell="phone">+7 (925) 401-26-80</p>
+            </div>
+            <p class="ad-role is-staff" data-cell="role">Менеджер</p>
+            <p class="ad-muted">15.02.2026</p>
+            <button class="ad-btn ad-btn--light" type="button" data-user-edit>Редактировать</button>
+          </li>
+          <li class="ad-row ad-user" data-name="Елена Волкова" data-org="СДОБС ФУДС" data-email="e.volkova@sdobsf.ru" data-phone="+7 (916) 300-12-45" data-role="admin" data-date="2026-01-12">
+            <div class="ad-cell ad-cell--user">
+              <p class="ad-strong" data-cell="name">Елена Волкова</p>
+              <p class="ad-muted ad-small" data-cell="org">СДОБС ФУДС</p>
+            </div>
+            <div class="ad-cell ad-cell--contacts">
+              <p data-cell="email">e.volkova@sdobsf.ru</p>
+              <p class="ad-muted ad-small" data-cell="phone">+7 (916) 300-12-45</p>
+            </div>
+            <p class="ad-role is-staff" data-cell="role">Администратор</p>
+            <p class="ad-muted">12.01.2026</p>
+            <button class="ad-btn ad-btn--light" type="button" data-user-edit>Редактировать</button>
+          </li>
+          </ul>
+
+          <p class="ad-table__empty" hidden>Пользователи не найдены</p>
+
+          <div class="ad-table__footer">
+            <p data-users-shown>Показано 1–8 из 128 пользователей</p>
+            <div class="ad-pages">
+              <img class="ad-pages__arrow ad-pages__arrow--prev" src="../img/chevron-right.svg" width="16" height="16" alt="Назад">
+              <button class="ad-page-btn is-active" type="button">1</button>
+              <button class="ad-page-btn" type="button">2</button>
+              <button class="ad-page-btn" type="button">3</button>
+              <span class="ad-page-dots">…</span>
+              <button class="ad-page-btn" type="button">16</button>
+              <img class="ad-pages__arrow" src="../img/chevron-right.svg" width="16" height="16" alt="Вперёд">
+            </div>
+          </div>
+        </div>
+
+        <!-- Редактирование пользователя -->
+        <div class="op-modal" data-user-modal hidden>
+          <div class="op-overlay"></div>
+          <form class="op-drawer" role="dialog" aria-modal="true" aria-labelledby="user-modal-title" novalidate>
+            <div class="op-drawer__head">
+              <div>
+                <p class="op-drawer__title" id="user-modal-title">Редактирование пользователя</p>
+                <p class="op-drawer__created">Измените контактные данные и роль доступа.</p>
+              </div>
+              <button class="op-drawer__close" type="button" data-modal-close aria-label="Закрыть">
+                <img src="../img/close.svg" width="18" height="18" alt="">
+              </button>
+            </div>
+
+            <label class="op-label">Имя и фамилия<input class="op-field" name="name" type="text" required></label>
+            <label class="op-label">Организация<input class="op-field" name="org" type="text"></label>
+            <label class="op-label">Электронная почта<input class="op-field" name="email" type="email" required></label>
+            <label class="op-label">Телефон<input class="op-field" name="phone" type="tel" required></label>
+            <label class="op-label">Роль
+              <select class="op-field" name="role">
+                <option value="client">Клиент</option>
+                <option value="courier">Курьер</option>
+                <option value="production">Начальник производства</option>
+                <option value="manager">Менеджер</option>
+                <option value="admin">Администратор</option>
+              </select>
+            </label>
+
+            <div class="op-drawer__buttons">
+              <button class="op-btn op-btn--primary op-btn--large" type="submit">Сохранить</button>
+              <button class="op-btn op-btn--large" type="button" data-modal-close>Отмена</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- Архив заказов -->
+      <section class="ad-section" data-admin-section="archive" hidden>
+      <p class="ad-crumbs">
+        Личный кабинет
+        <img src="../img/chevron-right.svg" width="12" height="12" alt="">
+        <span>Архив заказов</span>
+      </p>
+
+        <div class="ad-heading">
+          <h1>Архив заказов</h1>
+          <p>Завершенные и отмененные заказы. Найдите заказ по периоду и статусу.</p>
+        </div>
+
+        <div class="ad-stats">
+          <div class="ad-stat"><p class="ad-muted">Заказов в архиве</p><p class="ad-stat__value">124</p><p class="ad-muted ad-small">За выбранный период</p></div>
+          <div class="ad-stat"><p class="ad-muted">Доставлено</p><p class="ad-stat__value">118</p><p class="ad-muted ad-small">95,2% всех заказов</p></div>
+          <div class="ad-stat"><p class="ad-muted">Отменено</p><p class="ad-stat__value">6</p><p class="ad-muted ad-small">4,8% всех заказов</p></div>
+        </div>
+
+        <div class="ad-card">
+          <div class="ad-filters">
+            <label class="ad-field ad-field--date">
+              Период с
+              <input class="ad-input" type="date" value="2026-10-01" data-archive-from>
+            </label>
+            <label class="ad-field ad-field--date">
+              Период по
+              <input class="ad-input" type="date" value="2026-10-24" data-archive-to>
+            </label>
+            <label class="ad-field ad-field--status">
+              Статус заказа
+              <select class="ad-input ad-select" data-archive-status>
+                <option value="all">Все статусы</option>
+                <option value="delivered">Доставлен</option>
+                <option value="cancelled">Отменен</option>
+              </select>
+            </label>
+            <button class="ad-btn ad-btn--primary ad-btn--apply" type="button" data-archive-apply>Применить</button>
+            <button class="ad-link" type="button" data-archive-reset>Сбросить</button>
+          </div>
+
+          <div class="ad-table__head ad-table__head--archive">
+            <button class="ad-sort" type="button" data-archive-sort>Заказ / дата ↓</button>
+            <p>Клиент</p>
+            <p>Состав заказа</p>
+            <p>Сумма</p>
+            <p>Статус</p>
+            <p>Менеджер</p>
+          </div>
+
+          <ul class="ad-table__body ad-table__body--archive" data-total="124">
+          <li class="ad-row ad-order" data-date="2026-10-24" data-created="2026-10-24T09:10" data-status="delivered">
+            <div class="ad-cell ad-cell--order">
+              <p class="ad-order__id">№ 1043</p>
+              <p class="ad-muted ad-small">24.10.2026 · 09:10</p>
+            </div>
+            <div class="ad-cell ad-cell--client">
+              <p class="ad-medium">Игорь Павлов</p>
+              <p class="ad-muted ad-small">Пекарня «Тёплый хлеб»</p>
+            </div>
+            <div class="ad-cell ad-cell--composition">
+              <p>Круассан сливочный и ещё 2</p>
+              <p class="ad-muted ad-small">3 позиции · 350 шт.</p>
+            </div>
+            <p class="ad-sum">24 500 ₽</p>
+            <div><span class="ad-chip ad-chip--delivered">Доставлен</span></div>
+            <p>Мария Смирнова</p>
+          </li>
+          <li class="ad-row ad-order" data-date="2026-10-23" data-created="2026-10-23T16:45" data-status="delivered">
+            <div class="ad-cell ad-cell--order">
+              <p class="ad-order__id">№ 1041</p>
+              <p class="ad-muted ad-small">23.10.2026 · 16:45</p>
+            </div>
+            <div class="ad-cell ad-cell--client">
+              <p class="ad-medium">Анна Соколова</p>
+              <p class="ad-muted ad-small">ООО «Хлебная лавка»</p>
+            </div>
+            <div class="ad-cell ad-cell--composition">
+              <p>Багет французский и ещё 1</p>
+              <p class="ad-muted ad-small">2 позиции · 280 шт.</p>
+            </div>
+            <p class="ad-sum">18 200 ₽</p>
+            <div><span class="ad-chip ad-chip--delivered">Доставлен</span></div>
+            <p>Мария Смирнова</p>
+          </li>
+          <li class="ad-row ad-order" data-date="2026-10-23" data-created="2026-10-23T12:20" data-status="cancelled">
+            <div class="ad-cell ad-cell--order">
+              <p class="ad-order__id">№ 1039</p>
+              <p class="ad-muted ad-small">23.10.2026 · 12:20</p>
+            </div>
+            <div class="ad-cell ad-cell--client">
+              <p class="ad-medium">Дмитрий Морозов</p>
+              <p class="ad-muted ad-small">Кофейня «Зерно»</p>
+            </div>
+            <div class="ad-cell ad-cell--composition">
+              <p>Круассан с шоколадом</p>
+              <p class="ad-muted ad-small">1 позиция · 160 шт.</p>
+            </div>
+            <p class="ad-sum">14 400 ₽</p>
+            <div><span class="ad-chip ad-chip--cancelled">Отменен</span></div>
+            <p>Ольга Белова</p>
+          </li>
+          <li class="ad-row ad-order" data-date="2026-10-22" data-created="2026-10-22T14:05" data-status="delivered">
+            <div class="ad-cell ad-cell--order">
+              <p class="ad-order__id">№ 1036</p>
+              <p class="ad-muted ad-small">22.10.2026 · 14:05</p>
+            </div>
+            <div class="ad-cell ad-cell--client">
+              <p class="ad-medium">Елена Кузнецова</p>
+              <p class="ad-muted ad-small">ООО «Городское кафе»</p>
+            </div>
+            <div class="ad-cell ad-cell--composition">
+              <p>Булочка бриошь и ещё 3</p>
+              <p class="ad-muted ad-small">4 позиции · 620 шт.</p>
+            </div>
+            <p class="ad-sum">32 800 ₽</p>
+            <div><span class="ad-chip ad-chip--delivered">Доставлен</span></div>
+            <p>Ольга Белова</p>
+          </li>
+          <li class="ad-row ad-order" data-date="2026-10-21" data-created="2026-10-21T10:30" data-status="delivered">
+            <div class="ad-cell ad-cell--order">
+              <p class="ad-order__id">№ 1032</p>
+              <p class="ad-muted ad-small">21.10.2026 · 10:30</p>
+            </div>
+            <div class="ad-cell ad-cell--client">
+              <p class="ad-medium">Игорь Павлов</p>
+              <p class="ad-muted ad-small">Пекарня «Тёплый хлеб»</p>
+            </div>
+            <div class="ad-cell ad-cell--composition">
+              <p>Слойка с вишней и ещё 1</p>
+              <p class="ad-muted ad-small">2 позиции · 300 шт.</p>
+            </div>
+            <p class="ad-sum">19 600 ₽</p>
+            <div><span class="ad-chip ad-chip--delivered">Доставлен</span></div>
+            <p>Мария Смирнова</p>
+          </li>
+          <li class="ad-row ad-order" data-date="2026-10-20" data-created="2026-10-20T15:15" data-status="delivered">
+            <div class="ad-cell ad-cell--order">
+              <p class="ad-order__id">№ 1028</p>
+              <p class="ad-muted ad-small">20.10.2026 · 15:15</p>
+            </div>
+            <div class="ad-cell ad-cell--client">
+              <p class="ad-medium">Анна Соколова</p>
+              <p class="ad-muted ad-small">ООО «Хлебная лавка»</p>
+            </div>
+            <div class="ad-cell ad-cell--composition">
+              <p>Чиабатта пшеничная и ещё 2</p>
+              <p class="ad-muted ad-small">3 позиции · 420 шт.</p>
+            </div>
+            <p class="ad-sum">28 100 ₽</p>
+            <div><span class="ad-chip ad-chip--delivered">Доставлен</span></div>
+            <p>Мария Смирнова</p>
+          </li>
+          </ul>
+
+          <p class="ad-table__empty" hidden>Заказы не найдены</p>
+
+          <div class="ad-table__footer">
+            <p data-archive-shown>Показано 1–6 из 124 заказов</p>
+            <div class="ad-pages">
+              <img class="ad-pages__arrow ad-pages__arrow--prev" src="../img/chevron-right.svg" width="16" height="16" alt="Назад">
+              <button class="ad-page-btn is-active" type="button">1</button>
+              <button class="ad-page-btn" type="button">2</button>
+              <button class="ad-page-btn" type="button">3</button>
+              <span class="ad-page-dots">…</span>
+              <button class="ad-page-btn" type="button">21</button>
+              <img class="ad-pages__arrow" src="../img/chevron-right.svg" width="16" height="16" alt="Вперёд">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Отчётность -->
+      <section class="ad-section" data-admin-section="reports" hidden>
+      <p class="ad-crumbs">
+        Личный кабинет
+        <img src="../img/chevron-right.svg" width="12" height="12" alt="">
+        <span>Отчетность</span>
+      </p>
+
+        <div class="ad-heading">
+          <h1>Отчетность</h1>
+          <p>Сформируйте отчет за нужный период и выгрузите данные для дальнейшей работы.</p>
+        </div>
+
+        <div class="ad-card ad-card--padded">
+          <h2 class="ad-card__heading">Параметры отчета</h2>
+
+          <div class="ad-report__fields">
+            <label class="ad-field ad-field--report-date">
+              Дата начала
+              <input class="ad-input" type="date" value="2026-10-01" data-report-start>
+            </label>
+            <label class="ad-field ad-field--report-date">
+              Дата конца
+              <input class="ad-input" type="date" value="2026-10-24" data-report-end>
+            </label>
+            <label class="ad-field ad-field--report-type">
+              Тип отчета
+              <select class="ad-input ad-select">
+                <option>Сводный отчет по заказам</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="ad-report__actions">
+            <button class="ad-btn ad-btn--primary ad-btn--generate" type="button" data-report-generate>Сформировать отчет</button>
+            <button class="ad-btn ad-btn--light ad-btn--export" type="button" data-report-export>Экспорт в Excel</button>
+            <p class="ad-muted">Файл .csv · все данные отчета</p>
+          </div>
+        </div>
+
+        <div class="ad-report">
+          <div class="ad-report__head">
+            <div>
+              <div class="ad-report__title">
+                <h2>Сводный отчет по заказам</h2>
+                <span class="ad-chip ad-chip--delivered">Сформирован</span>
+              </div>
+              <p class="ad-muted" data-report-period>01.10.2026 — 24.10.2026 · группировка по неделям</p>
+            </div>
+            <p class="ad-muted ad-small" data-report-generated>Сформирован 24.10.2026 в 12:05</p>
+          </div>
+
+          <div class="ad-stats">
+            <div class="ad-stat"><p class="ad-muted">Всего заказов</p><p class="ad-stat__value">124</p><p class="ad-muted ad-small">118 доставлено · 6 отменено</p></div>
+            <div class="ad-stat"><p class="ad-muted">Сумма доставленных заказов</p><p class="ad-stat__value">1 556 000 ₽</p><p class="ad-muted ad-small">Без учета отмененных заказов</p></div>
+            <div class="ad-stat"><p class="ad-muted">Средний чек</p><p class="ad-stat__value">13 186,44 ₽</p><p class="ad-muted ad-small">По доставленным заказам</p></div>
+          </div>
+
+          <div class="ad-card">
+            <div class="ad-report__table-head">
+              <h3>Детализация по периодам</h3>
+              <p class="ad-muted">Суммы в рублях</p>
+            </div>
+            <table class="ad-report__table">
+              <thead>
+                <tr><th scope="col">Период</th><th scope="col">Заказов</th><th scope="col">Доставлено</th><th scope="col">Отменено</th><th scope="col">Сумма заказов</th><th scope="col">Средний чек</th></tr>
+              </thead>
+              <tbody>
+              <tr><th scope="row">01–07 октября</th><td>28</td><td>27</td><td>1</td><td>385 600 ₽</td><td>14 281,48 ₽</td></tr>
+              <tr><th scope="row">08–14 октября</th><td>34</td><td>32</td><td>2</td><td>428 400 ₽</td><td>13 387,50 ₽</td></tr>
+              <tr><th scope="row">15–21 октября</th><td>31</td><td>30</td><td>1</td><td>396 800 ₽</td><td>13 226,67 ₽</td></tr>
+              <tr><th scope="row">22–24 октября</th><td>31</td><td>29</td><td>2</td><td>345 200 ₽</td><td>11 903,45 ₽</td></tr>
+              <tr class="ad-report__total"><th scope="row">Итого за период</th><td>124</td><td>118</td><td>6</td><td>1 556 000 ₽</td><td>13 186,44 ₽</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="ad-rule">
+            <img src="../img/info.svg" width="16" height="16" alt="">
+            Сумма и средний чек рассчитаны по доставленным заказам. Отмененные заказы включены только в количество.
+          </p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+</body>
+
+</html>

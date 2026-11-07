@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="only light">
+  <title>Название торта — Сдобс Фудс</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/main.js" defer type="module"></script>
+</head>
+
+<body>
+
+  <!-- Шапка -->
+  <header class="header header--static">
+    <div class="header__inner">
+
+      <a class="logo" href="../index.html">
+        <img src="../img/logo.svg" alt="Сдобс Фудс">
+      </a>
+
+      <nav class="nav">
+        <div class="dropdown">
+          <a class="dropdown__link" href="./catalogue.html">Каталог</a>
+          <button class="dropdown__toggle" type="button" aria-expanded="false" aria-controls="catalog-menu" aria-label="Разделы каталога">
+            <img src="../img/arrow.svg" width="13" height="9" alt="">
+          </button>
+          <ul class="dropdown__menu" id="catalog-menu">
+            <li><a href="./catalogue.html#cheesecakes">Чизкейки</a></li>
+            <li><a href="./catalogue.html#desserts">Десерты</a></li>
+            <li><a href="./catalogue.html#cakes">Торты</a></li>
+          </ul>
+        </div>
+        <a href="./about.html">О нас</a>
+      </nav>
+
+      <div class="icons">
+        <a href="./cart.html" aria-label="Корзина">
+          <img src="../img/cart.svg" width="56" height="56" alt="">
+        </a>
+        <div class="dropdown">
+          <button class="dropdown__toggle dropdown__toggle--icon" type="button" aria-expanded="false" aria-controls="profile-menu" aria-label="Профиль">
+            <img src="../img/user.svg" width="56" height="56" alt="">
+          </button>
+          <div class="dropdown__menu dropdown__menu--profile" id="profile-menu">
+            <a class="dropdown__action" href="./login.html">Авторизоваться</a>
+            <a href="./profile.html">Изменить данные</a>
+            <a href="./orders.html">Мои заказы</a>
+          </div>
+        </div>
+      </div>
+
+      <button class="burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Открыть меню">
+        <img src="../img/burger.svg" alt="">
+      </button>
+
+    </div>
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Меню сайта">
+      <ul class="mobile-menu__list">
+        <li>
+          <a class="mobile-menu__link" href="./catalogue.html">Каталог</a>
+          <ul class="mobile-menu__sub">
+            <li><a href="./catalogue.html#cheesecakes">Чизкейки</a></li>
+            <li><a href="./catalogue.html#desserts">Десерты</a></li>
+            <li><a href="./catalogue.html#cakes">Торты</a></li>
+          </ul>
+        </li>
+        <li><a class="mobile-menu__link" href="./about.html">О нас</a></li>
+        <li><a class="mobile-menu__link" href="./cart.html">Корзина</a></li>
+        <li>
+          <p class="mobile-menu__link">Профиль</p>
+          <ul class="mobile-menu__sub">
+            <li><a class="mobile-menu__action" href="./login.html">Авторизоваться</a></li>
+            <li><a href="./profile.html">Изменить данные</a></li>
+            <li><a href="./orders.html">Мои заказы</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="product-page">
+
+    <!-- Карточка товара -->
+    <section class="product">
+      <div class="product__gallery" data-gallery>
+        <img class="gallery__main" src="../img/cakes/cake1.png" alt="Название торта">
+
+        <div class="gallery__thumbs">
+          <button class="gallery__arrow gallery__arrow--prev" type="button" aria-label="Предыдущее фото">
+            <img src="../img/thumb-arrow.svg" alt="">
+          </button>
+        <button class="gallery__thumb" type="button" data-full="../img/cakes/cake1.png" aria-label="Фото 1">
+          <img src="../img/cakes/cake1.png" alt="">
+        </button>
+        <button class="gallery__thumb" type="button" data-full="../img/cakes/cake1.png" aria-label="Фото 2">
+          <img src="../img/cakes/cake1.png" alt="">
+        </button>
+        <button class="gallery__thumb" type="button" data-full="../img/cakes/cake1.png" aria-label="Фото 3">
+          <img src="../img/cakes/cake1.png" alt="">
+        </button>
+          <button class="gallery__arrow gallery__arrow--next" type="button" aria-label="Следующее фото">
+            <img src="../img/thumb-arrow.svg" alt="">
+          </button>
+        </div>
+      </div>
+
+      <div class="product__info">
+        <h1 class="product__title">Название торта</h1>
+        <p class="product__sku">Артикул: 500290102</p>
+
+        <ul class="product__specs">
+          <li>
+            <img src="../img/weight.svg" width="25" height="25" alt="">
+            Вес: 500 гр
+          </li>
+          <li>
+            <img src="../img/clock.svg" width="25" height="25" alt="">
+            Доставим через: 5 дней
+          </li>
+        </ul>
+
+        <button class="btn product__buy" type="button">Добавить в корзину</button>
+      </div>
+    </section>
+
+    <!-- Описание и отзывы -->
+    <section class="details" data-tabs>
+      <div class="tabs__list" role="tablist">
+        <button class="tabs__tab" id="tab-description" role="tab" type="button" aria-controls="panel-description" aria-selected="false">Описание</button>
+        <button class="tabs__tab" id="tab-reviews" role="tab" type="button" aria-controls="panel-reviews" aria-selected="true">Отзывы</button>
+      </div>
+
+      <div class="tabs__panel" id="panel-description" role="tabpanel" aria-labelledby="tab-description" hidden>
+        <p class="details__text">
+          Таким образом рамки и место обучения кадров влечет за собой процесс внедрения и
+          модернизации систем массового участия. Идейные соображения высшего порядка.
+        </p>
+      </div>
+
+      <div class="tabs__panel" id="panel-reviews" role="tabpanel" aria-labelledby="tab-reviews">
+        <ul class="reviews">
+        <li class="review">
+          <div class="review__head">
+            <img class="review__avatar" src="../img/user.svg" alt="">
+            <div class="review__info">
+              <b class="review__name">Андрей Е.</b>
+              <time class="review__date" datetime="2026-10-19">19.10.2026</time>
+              <div class="review__stars" role="img" aria-label="Оценка: 4 из 5">
+                <img src="../img/star.svg" alt=""><img src="../img/star.svg" alt=""><img src="../img/star.svg" alt=""><img src="../img/star.svg" alt=""><img src="../img/star-empty.svg" alt="">
+              </div>
+            </div>
+          </div>
+          <p class="review__text">
+            Таким образом рамки и место обучения кадров влечет за собой процесс внедрения и
+            модернизации систем массового участия.
+          </p>
+        </li>
+        <li class="review">
+          <div class="review__head">
+            <img class="review__avatar" src="../img/user.svg" alt="">
+            <div class="review__info">
+              <b class="review__name">Андрей Е.</b>
+              <time class="review__date" datetime="2026-10-19">19.10.2026</time>
+              <div class="review__stars" role="img" aria-label="Оценка: 4 из 5">
+                <img src="../img/star.svg" alt=""><img src="../img/star.svg" alt=""><img src="../img/star.svg" alt=""><img src="../img/star.svg" alt=""><img src="../img/star-empty.svg" alt="">
+              </div>
+            </div>
+          </div>
+          <p class="review__text">
+            Таким образом рамки и место обучения кадров влечет за собой процесс внедрения и
+            модернизации систем массового участия.
+          </p>
+        </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Футер -->
+  <footer class="footer">
+    <div class="footer__inner">
+
+      <div class="footer__row">
+        <a class="logo" href="../index.html">
+          <img src="../img/logo.svg" alt="Сдобс Фудс">
+        </a>
+
+        <div class="footer__rest">
+          <div class="footer__social">
+            <a href="#">
+              <img src="../img/vk.svg" width="48" height="48" alt="ВКонтакте">
+            </a>
+            <a href="#">
+              <img src="../img/telegram.svg" width="48" height="48" alt="Телеграм">
+            </a>
+          </div>
+
+          <div class="footer__contacts">
+            <a href="tel:+79005555555">+7 (900) 555 55 55</a>
+            <a href="mailto:info@sdobsf.ru">info@sdobsf.ru</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="footer__copy">© ООО “Сдобс Фудс”. 2026</p>
+
+    </div>
+  </footer>
+
+</body>
+
+</html>

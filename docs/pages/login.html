@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="only light">
+  <title>Авторизация — Сдобс Фудс</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/main.js" defer type="module"></script>
+</head>
+
+<body>
+
+  <!-- Шапка -->
+  <header class="header header--static">
+    <div class="header__inner">
+
+      <a class="logo" href="../index.html">
+        <img src="../img/logo.svg" alt="Сдобс Фудс">
+      </a>
+
+      <nav class="nav">
+        <div class="dropdown">
+          <a class="dropdown__link" href="./catalogue.html">Каталог</a>
+          <button class="dropdown__toggle" type="button" aria-expanded="false" aria-controls="catalog-menu" aria-label="Разделы каталога">
+            <img src="../img/arrow.svg" width="13" height="9" alt="">
+          </button>
+          <ul class="dropdown__menu" id="catalog-menu">
+            <li><a href="./catalogue.html#cheesecakes">Чизкейки</a></li>
+            <li><a href="./catalogue.html#desserts">Десерты</a></li>
+            <li><a href="./catalogue.html#cakes">Торты</a></li>
+          </ul>
+        </div>
+        <a href="./about.html">О нас</a>
+      </nav>
+
+      <div class="icons">
+        <a href="./cart.html" aria-label="Корзина">
+          <img src="../img/cart.svg" width="56" height="56" alt="">
+        </a>
+        <div class="dropdown">
+          <button class="dropdown__toggle dropdown__toggle--icon" type="button" aria-expanded="false" aria-controls="profile-menu" aria-label="Профиль">
+            <img src="../img/user.svg" width="56" height="56" alt="">
+          </button>
+          <div class="dropdown__menu dropdown__menu--profile" id="profile-menu">
+            <a class="dropdown__action" href="./login.html">Авторизоваться</a>
+            <a href="./profile.html">Изменить данные</a>
+            <a href="./orders.html">Мои заказы</a>
+          </div>
+        </div>
+      </div>
+
+      <button class="burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Открыть меню">
+        <img src="../img/burger.svg" alt="">
+      </button>
+
+    </div>
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Меню сайта">
+      <ul class="mobile-menu__list">
+        <li>
+          <a class="mobile-menu__link" href="./catalogue.html">Каталог</a>
+          <ul class="mobile-menu__sub">
+            <li><a href="./catalogue.html#cheesecakes">Чизкейки</a></li>
+            <li><a href="./catalogue.html#desserts">Десерты</a></li>
+            <li><a href="./catalogue.html#cakes">Торты</a></li>
+          </ul>
+        </li>
+        <li><a class="mobile-menu__link" href="./about.html">О нас</a></li>
+        <li><a class="mobile-menu__link" href="./cart.html">Корзина</a></li>
+        <li>
+          <p class="mobile-menu__link">Профиль</p>
+          <ul class="mobile-menu__sub">
+            <li><a class="mobile-menu__action" href="./login.html">Авторизоваться</a></li>
+            <li><a href="./profile.html">Изменить данные</a></li>
+            <li><a href="./orders.html">Мои заказы</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="auth-page">
+
+    <!-- Авторизация -->
+    <form class="auth-card auth-card--login" id="login" data-auth-form="login">
+      <h1 class="auth-card__title">Авторизация</h1>
+
+      <div class="auth-card__fields">
+        <input class="field" type="text" name="login" placeholder="логин" autocomplete="username" required>
+        <input class="field" type="password" name="password" placeholder="пароль" autocomplete="current-password" required>
+      </div>
+
+      <button class="auth-card__submit" type="submit">Войти</button>
+      <a class="auth-card__switch" href="#register">Перейти к регистрации</a>
+    </form>
+
+    <p class="auth-note" data-auth-form="login">
+      Временные ссылки для проверки:
+      <a href="./operator.html">кабинет оператора</a>,
+      <a href="./production.html">кабинет начальника производства</a>,
+      <a href="./courier.html">кабинет курьера</a>,
+      <a href="./admin.html">кабинет администратора</a>
+    </p>
+
+    <!-- Регистрация -->
+    <form class="auth-card" id="register" data-auth-form="register" hidden>
+      <h1 class="auth-card__title">Регистрация</h1>
+
+      <div class="auth-card__fields">
+        <input class="field" type="email" name="email" placeholder="электронная почта" autocomplete="email" required>
+        <input class="field" type="tel" name="phone" placeholder="номер телефона" autocomplete="tel" required>
+        <input class="field" type="password" name="password" placeholder="пароль" autocomplete="new-password" required>
+        <input class="field" type="password" name="confirm" placeholder="подтверждение пароля" autocomplete="new-password" required>
+        <input class="field" type="text" name="address" placeholder="адрес доставки" autocomplete="street-address" required>
+      </div>
+
+      <button class="auth-card__submit" type="submit">Зарегистрироваться</button>
+      <a class="auth-card__switch" href="#login">Перейти к авторизации</a>
+    </form>
+
+  </main>
+
+  <!-- Футер -->
+  <footer class="footer">
+    <div class="footer__inner">
+
+      <div class="footer__row">
+        <a class="logo" href="../index.html">
+          <img src="../img/logo.svg" alt="Сдобс Фудс">
+        </a>
+
+        <div class="footer__rest">
+          <div class="footer__social">
+            <a href="#">
+              <img src="../img/vk.svg" width="48" height="48" alt="ВКонтакте">
+            </a>
+            <a href="#">
+              <img src="../img/telegram.svg" width="48" height="48" alt="Телеграм">
+            </a>
+          </div>
+
+          <div class="footer__contacts">
+            <a href="tel:+79005555555">+7 (900) 555 55 55</a>
+            <a href="mailto:info@sdobsf.ru">info@sdobsf.ru</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="footer__copy">© ООО “Сдобс Фудс”. 2026</p>
+
+    </div>
+  </footer>
+
+</body>
+
+</html>

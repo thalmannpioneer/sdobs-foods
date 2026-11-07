@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="only light">
+  <title>Сдобс Фудс — Главная</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/main.js" defer type="module"></script>
+</head>
+
+<body>
+
+  <!-- Баннер и шапка -->
+  <div class="top">
+    <div class="hero"></div>
+
+    <header class="header">
+      <div class="header__inner">
+
+        <a class="logo" href="./index.html">
+          <img src="./img/logo.svg" alt="Сдобс Фудс">
+        </a>
+
+        <nav class="nav">
+          <div class="dropdown">
+            <a class="dropdown__link" href="./pages/catalogue.html">Каталог</a>
+            <button class="dropdown__toggle" type="button" aria-expanded="false" aria-controls="catalog-menu" aria-label="Разделы каталога">
+              <img src="./img/arrow.svg" width="13" height="9" alt="">
+            </button>
+            <ul class="dropdown__menu" id="catalog-menu">
+              <li><a href="./pages/catalogue.html#cheesecakes">Чизкейки</a></li>
+              <li><a href="./pages/catalogue.html#desserts">Десерты</a></li>
+              <li><a href="./pages/catalogue.html#cakes">Торты</a></li>
+            </ul>
+          </div>
+          <a href="./pages/about.html">О нас</a>
+        </nav>
+
+        <div class="icons">
+          <a href="./pages/cart.html" aria-label="Корзина">
+            <img src="./img/cart.svg" width="56" height="56" alt="">
+          </a>
+          <div class="dropdown">
+            <button class="dropdown__toggle dropdown__toggle--icon" type="button" aria-expanded="false" aria-controls="profile-menu" aria-label="Профиль">
+              <img src="./img/user.svg" width="56" height="56" alt="">
+            </button>
+            <div class="dropdown__menu dropdown__menu--profile" id="profile-menu">
+              <a class="dropdown__action" href="./pages/login.html">Авторизоваться</a>
+              <a href="./pages/profile.html">Изменить данные</a>
+              <a href="./pages/orders.html">Мои заказы</a>
+            </div>
+          </div>
+        </div>
+
+        <button class="burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Открыть меню">
+          <img src="./img/burger.svg" alt="">
+        </button>
+
+      </div>
+      <nav class="mobile-menu" id="mobile-menu" aria-label="Меню сайта">
+        <ul class="mobile-menu__list">
+          <li>
+            <a class="mobile-menu__link" href="./pages/catalogue.html">Каталог</a>
+            <ul class="mobile-menu__sub">
+              <li><a href="./pages/catalogue.html#cheesecakes">Чизкейки</a></li>
+              <li><a href="./pages/catalogue.html#desserts">Десерты</a></li>
+              <li><a href="./pages/catalogue.html#cakes">Торты</a></li>
+            </ul>
+          </li>
+          <li><a class="mobile-menu__link" href="./pages/about.html">О нас</a></li>
+          <li><a class="mobile-menu__link" href="./pages/cart.html">Корзина</a></li>
+          <li>
+            <p class="mobile-menu__link">Профиль</p>
+            <ul class="mobile-menu__sub">
+              <li><a class="mobile-menu__action" href="./pages/login.html">Авторизоваться</a></li>
+              <li><a href="./pages/profile.html">Изменить данные</a></li>
+              <li><a href="./pages/orders.html">Мои заказы</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="hero__content">
+      <div class="hero__wrap">
+        <h1>лучшие чизкейки Московской Области.</h1>
+        <a class="btn" href="./pages/catalogue.html">Посмотреть</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- О компании -->
+  <section class="about">
+    <div class="about__inner">
+
+      <img class="about__img" src="./img/award.png" alt="Диплом «Бренд года в России 2024»">
+
+      <div class="about__text">
+        <h2>сдобс фудс</h2>
+        <p>
+          Идейные соображения высшего порядка, а также реализация намеченных плановых заданий
+          обеспечивает широкому кругу (специалистов) участие в формировании системы обучения кадров,
+          соответствует насущным потребностям. Равным образом начало повседневной работы по
+          формированию позиции влечет за собой процесс внедрения и модернизации направлений
+          прогрессивного развития.
+        </p>
+        <a class="btn" href="./pages/about.html">Подробнее</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Хиты продаж -->
+  <section class="hits">
+    <div class="hits__inner">
+      <h2>хиты продаж</h2>
+
+      <div class="cards">
+        <div class="cards__rows">
+
+          <div class="cards__row">
+            <div class="card">
+              <img src="./img/cakes/cake1.png" alt="">
+              <b>Название</b>
+              <a class="btn" href="./pages/product.html">Подробнее</a>
+            </div>
+            <div class="card">
+              <img src="./img/cakes/cake2.png" alt="">
+              <b>Название</b>
+              <a class="btn" href="./pages/product.html">Подробнее</a>
+            </div>
+          </div>
+
+          <div class="cards__row">
+            <div class="card">
+              <img src="./img/cakes/cake3.png" alt="">
+              <b>Название</b>
+              <a class="btn" href="./pages/product.html">Подробнее</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Футер -->
+  <footer class="footer">
+    <div class="footer__inner">
+
+      <div class="footer__row">
+        <a class="logo" href="./index.html">
+          <img src="./img/logo.svg" alt="Сдобс Фудс">
+        </a>
+
+        <div class="footer__rest">
+          <div class="footer__social">
+            <a href="#">
+              <img src="./img/vk.svg" width="48" height="48" alt="ВКонтакте">
+            </a>
+            <a href="#">
+              <img src="./img/telegram.svg" width="48" height="48" alt="Телеграм">
+            </a>
+          </div>
+
+          <div class="footer__contacts">
+            <a href="tel:+79005555555">+7 (900) 555 55 55</a>
+            <a href="mailto:info@sdobsf.ru">info@sdobsf.ru</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="footer__copy">© ООО “Сдобс Фудс”. 2026</p>
+
+    </div>
+  </footer>
+
+</body>
+
+</html>

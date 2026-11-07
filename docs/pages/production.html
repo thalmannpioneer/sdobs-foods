@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="only light">
+  <title>Кабинет начальника производства — Сдобс Фудс</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/main.js" defer type="module"></script>
+</head>
+
+<body class="pc-page">
+
+  <!-- Шапка личного кабинета -->
+  <header class="pc-header">
+    <div class="pc-header__inner">
+      <a class="logo" href="../index.html">
+        <img src="../img/logo.svg" alt="Сдобс Фудс">
+      </a>
+
+      <nav class="pc-nav">
+        <div class="dropdown">
+          <a class="dropdown__link" href="./catalogue.html">Каталог продукции</a>
+          <button class="dropdown__toggle" type="button" aria-expanded="false" aria-controls="catalog-menu" aria-label="Разделы каталога">
+            <img src="../img/arrow.svg" width="13" height="9" alt="">
+          </button>
+          <ul class="dropdown__menu" id="catalog-menu">
+            <li><a href="./catalogue.html#cheesecakes">Чизкейки</a></li>
+            <li><a href="./catalogue.html#desserts">Десерты</a></li>
+            <li><a href="./catalogue.html#cakes">Торты</a></li>
+          </ul>
+        </div>
+        <a class="pc-nav__current" href="./profile.html">Личный кабинет</a>
+      </nav>
+
+      <a class="pc-header__profile" href="./profile.html" aria-label="Профиль">
+        <img src="../img/user.svg" width="56" height="56" alt="">
+      </a>
+    </div>
+  </header>
+
+  <main class="pc-main" data-production>
+
+    <!-- Обзор производства -->
+    <section class="pc-overview">
+      <p class="pc-crumbs">
+        Личный кабинет
+        <img src="../img/chevron-right.svg" width="12" height="12" alt="">
+        <span>Производство</span>
+      </p>
+
+      <div class="pc-heading">
+        <div class="pc-heading__text">
+          <h1>Заказы в производстве</h1>
+          <p>Подтвержденные заказы, переданные в цех. Управляйте выпуском и комментариями.</p>
+        </div>
+        <div class="pc-employee">
+          <span class="pc-employee__avatar">АС</span>
+          <div>
+            <p class="pc-employee__name">Александр Соколов</p>
+            <p class="pc-employee__role">Начальник производства</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pc-stats">
+        <div class="pc-stat">
+          <span class="pc-stat__icon"><img src="../img/clipboard-list.svg" width="20" height="20" alt=""></span>
+          <div>
+            <p class="pc-muted pc-small">Передано в производство</p>
+            <p class="pc-stat__value"><b data-pc-stat="total">4</b> <span data-pc-caption="total">подтвержденных заказа</span></p>
+          </div>
+        </div>
+        <div class="pc-stat">
+          <span class="pc-stat__icon"><img src="../img/factory.svg" width="20" height="20" alt=""></span>
+          <div>
+            <p class="pc-muted pc-small">В производстве</p>
+            <p class="pc-stat__value"><b data-pc-stat="in-production">3</b> <span data-pc-caption="in-production">заказа в работе</span></p>
+          </div>
+        </div>
+        <div class="pc-stat">
+          <span class="pc-stat__icon"><img src="../img/package-check.svg" width="20" height="20" alt=""></span>
+          <div>
+            <p class="pc-muted pc-small">Произведено</p>
+            <p class="pc-stat__value"><b data-pc-stat="produced">1</b> <span data-pc-caption="produced">заказ готов к отгрузке</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Реестр производственных заказов -->
+    <section class="pc-registry">
+      <div class="pc-toolbar">
+        <div class="pc-filters" role="group" aria-label="Фильтр по статусу производства">
+          <button class="pc-filter is-active" type="button" data-pc-filter="all">Все заказы <span data-pc-filter-count>4</span></button>
+          <button class="pc-filter" type="button" data-pc-filter="in-production">В производстве <span data-pc-filter-count>3</span></button>
+          <button class="pc-filter" type="button" data-pc-filter="produced">Произведено <span data-pc-filter-count>1</span></button>
+        </div>
+
+        <label class="pc-search">
+          <img src="../img/search-gray.svg" width="16" height="16" alt="">
+          <input type="search" placeholder="Найти по ID или продукции" data-pc-search aria-label="Поиск заказа">
+        </label>
+      </div>
+
+      <p class="pc-rule">
+        <img src="../img/info.svg" width="15" height="15" alt="">
+        Только заказы со статусом «Подтвержден». Статус производства изменяется отдельно для каждого заказа.
+      </p>
+
+      <div class="pc-table">
+        <div class="pc-table__head">
+          <p>Заказ / дата</p>
+          <div class="pc-table__products">
+            <p>Требуемая продукция</p>
+            <p>Кол-во</p>
+          </div>
+          <p>Статус производства</p>
+          <p>Изменение статуса и комментарий</p>
+        </div>
+
+        <ul class="pc-table__body">
+        <li class="pc-row" data-created="2026-10-24T09:15" data-status="in-production">
+          <div class="pc-order">
+            <p class="pc-order__id">№ 1048</p>
+            <p class="pc-muted">24.10.2026 · 09:15</p>
+            <p class="pc-order__client">ООО «Хлебная лавка»</p>
+            <p class="pc-order__confirmed">
+              <img src="../img/circle-check.svg" width="13" height="13" alt="">
+              Подтвержден
+            </p>
+          </div>
+
+          <div class="pc-items">
+            <div class="pc-item">
+              <p>Круассан сливочный, 70 г</p>
+              <p class="pc-item__qty">240 шт.</p>
+            </div>
+            <div class="pc-item">
+              <p>Улитка с изюмом, 100 г</p>
+              <p class="pc-item__qty">120 шт.</p>
+            </div>
+            <div class="pc-item">
+              <p>Слойка с вишней, 90 г</p>
+              <p class="pc-item__qty">180 шт.</p>
+            </div>
+            <p class="pc-muted pc-small">3 позиции каталога</p>
+          </div>
+
+          <div class="pc-state">
+            <p class="pc-status pc-status--in-production">
+              <span class="pc-status__dot"></span>
+              <span data-pc-status-text>В производстве</span>
+            </p>
+            <p class="pc-muted pc-small" data-pc-time>Сегодня, 09:42</p>
+          </div>
+
+          <div class="pc-edit">
+            <div class="pc-edit__row">
+              <select class="pc-select" data-pc-select aria-label="Статус производства заказа №1048">
+                <option value="in-production" selected>В производстве</option>
+                <option value="produced">Произведено</option>
+              </select>
+              <button class="pc-save" type="button" data-pc-save>Сохранить</button>
+            </div>
+            <input class="pc-comment" type="text" value="Первая партия в печи. Выпуск до 14:00." placeholder="Добавить комментарий производства" data-pc-comment aria-label="Комментарий производства к заказу №1048">
+            <p class="pc-muted pc-small" data-pc-note>Последние изменения сохранены</p>
+          </div>
+        </li>
+        <li class="pc-row" data-created="2026-10-24T08:40" data-status="in-production">
+          <div class="pc-order">
+            <p class="pc-order__id">№ 1047</p>
+            <p class="pc-muted">24.10.2026 · 08:40</p>
+            <p class="pc-order__client">Кофейня «Зерно»</p>
+            <p class="pc-order__confirmed">
+              <img src="../img/circle-check.svg" width="13" height="13" alt="">
+              Подтвержден
+            </p>
+          </div>
+
+          <div class="pc-items">
+            <div class="pc-item">
+              <p>Круассан с шоколадом, 90 г</p>
+              <p class="pc-item__qty">160 шт.</p>
+            </div>
+            <div class="pc-item">
+              <p>Синнабон с корицей, 120 г</p>
+              <p class="pc-item__qty">80 шт.</p>
+            </div>
+            <p class="pc-muted pc-small">2 позиции каталога</p>
+          </div>
+
+          <div class="pc-state">
+            <p class="pc-status pc-status--in-production">
+              <span class="pc-status__dot"></span>
+              <span data-pc-status-text>В производстве</span>
+            </p>
+            <p class="pc-muted pc-small" data-pc-time>Сегодня, 09:10</p>
+          </div>
+
+          <div class="pc-edit">
+            <div class="pc-edit__row">
+              <select class="pc-select" data-pc-select aria-label="Статус производства заказа №1047">
+                <option value="in-production" selected>В производстве</option>
+                <option value="produced">Произведено</option>
+              </select>
+              <button class="pc-save" type="button" data-pc-save>Сохранить</button>
+            </div>
+            <input class="pc-comment" type="text" value="" placeholder="Добавить комментарий производства" data-pc-comment aria-label="Комментарий производства к заказу №1047">
+            <p class="pc-muted pc-small" data-pc-note>Комментарий виден менеджеру заказа</p>
+          </div>
+        </li>
+        <li class="pc-row" data-created="2026-10-23T16:20" data-status="in-production">
+          <div class="pc-order">
+            <p class="pc-order__id">№ 1045</p>
+            <p class="pc-muted">23.10.2026 · 16:20</p>
+            <p class="pc-order__client">ООО «Городское кафе»</p>
+            <p class="pc-order__confirmed">
+              <img src="../img/circle-check.svg" width="13" height="13" alt="">
+              Подтвержден
+            </p>
+          </div>
+
+          <div class="pc-items">
+            <div class="pc-item">
+              <p>Багет французский, 250 г</p>
+              <p class="pc-item__qty">100 шт.</p>
+            </div>
+            <div class="pc-item">
+              <p>Булочка бриошь, 80 г</p>
+              <p class="pc-item__qty">300 шт.</p>
+            </div>
+            <div class="pc-item">
+              <p>Чиабатта пшеничная, 200 г</p>
+              <p class="pc-item__qty">80 шт.</p>
+            </div>
+            <p class="pc-muted pc-small">3 позиции каталога</p>
+          </div>
+
+          <div class="pc-state">
+            <p class="pc-status pc-status--in-production">
+              <span class="pc-status__dot"></span>
+              <span data-pc-status-text>В производстве</span>
+            </p>
+            <p class="pc-muted pc-small" data-pc-time>Сегодня, 08:55</p>
+          </div>
+
+          <div class="pc-edit">
+            <div class="pc-edit__row">
+              <select class="pc-select" data-pc-select aria-label="Статус производства заказа №1045">
+                <option value="in-production" selected>В производстве</option>
+                <option value="produced">Произведено</option>
+              </select>
+              <button class="pc-save" type="button" data-pc-save>Сохранить</button>
+            </div>
+            <input class="pc-comment" type="text" value="Тесто на расстойке. Плановый выпуск — 12:30." placeholder="Добавить комментарий производства" data-pc-comment aria-label="Комментарий производства к заказу №1045">
+            <p class="pc-muted pc-small" data-pc-note>Последние изменения сохранены</p>
+          </div>
+        </li>
+        <li class="pc-row" data-created="2026-10-23T14:05" data-status="produced">
+          <div class="pc-order">
+            <p class="pc-order__id">№ 1042</p>
+            <p class="pc-muted">23.10.2026 · 14:05</p>
+            <p class="pc-order__client">Пекарня «Тёплый хлеб»</p>
+            <p class="pc-order__confirmed">
+              <img src="../img/circle-check.svg" width="13" height="13" alt="">
+              Подтвержден
+            </p>
+          </div>
+
+          <div class="pc-items">
+            <div class="pc-item">
+              <p>Круассан сливочный, 70 г</p>
+              <p class="pc-item__qty">200 шт.</p>
+            </div>
+            <div class="pc-item">
+              <p>Слойка с яблоком, 90 г</p>
+              <p class="pc-item__qty">150 шт.</p>
+            </div>
+            <p class="pc-muted pc-small">2 позиции каталога</p>
+          </div>
+
+          <div class="pc-state">
+            <p class="pc-status pc-status--produced">
+              <span class="pc-status__dot"></span>
+              <span data-pc-status-text>Произведено</span>
+            </p>
+            <p class="pc-muted pc-small" data-pc-time>Сегодня, 08:30</p>
+          </div>
+
+          <div class="pc-edit">
+            <div class="pc-edit__row">
+              <select class="pc-select" data-pc-select aria-label="Статус производства заказа №1042">
+                <option value="in-production">В производстве</option>
+                <option value="produced" selected>Произведено</option>
+              </select>
+              <button class="pc-save" type="button" data-pc-save>Сохранить</button>
+            </div>
+            <input class="pc-comment" type="text" value="Выпущено полностью. Передано на упаковку." placeholder="Добавить комментарий производства" data-pc-comment aria-label="Комментарий производства к заказу №1042">
+            <p class="pc-muted pc-small" data-pc-note>Последние изменения сохранены</p>
+          </div>
+        </li>
+        </ul>
+
+        <p class="pc-table__empty" hidden>Заказы не найдены</p>
+
+        <div class="pc-table__footer">
+          <p data-pc-shown>Показаны все заказы: 4 из 4</p>
+          <button class="pc-sort" type="button" data-pc-sort>Сначала новые</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+
+</html>
